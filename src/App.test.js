@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen,logRoles } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test.skip('example test one', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // logRoles(screen.getByTestId("parent-container"))
+  const btnElement = screen.getByRole("button",{name:"click here",exact:false});
+  
+  expect(btnElement).toBeInTheDocument();
+
 });
